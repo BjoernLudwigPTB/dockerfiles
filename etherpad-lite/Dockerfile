@@ -1,5 +1,5 @@
 FROM node:9
-MAINTAINER Tony Motakis <tvelocity@gmail.com>
+MAINTAINER Bjoern Ludwig <bjoern.ludwig@ptb.de>
 
 ENV ETHERPAD_VERSION 1.6.5
 ENV NODE_ENV production
