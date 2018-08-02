@@ -2,7 +2,7 @@
 set -e
 
 : ${ETHERPAD_DB_TYPE:=mysql}
-: ${ETHERPAD_DB_HOST:=mysql}
+: ${ETHERPAD_DB_HOST:=etherpad_mysql}
 : ${ETHERPAD_DB_PORT:=3306}
 : ${ETHERPAD_DB_USER:=root}
 : ${ETHERPAD_DB_NAME:=etherpad}
@@ -28,7 +28,7 @@ if [ -z "$ETHERPAD_DB_PASSWORD" ]; then
 	exit 1
 fi
 
-: ${ETHERPAD_TITLE:=Etherpad}
+: ${ETHERPAD_TITLE:=PSt1-Etherpad}
 : ${ETHERPAD_PORT:=9001}
 
 # Check if database already exists
