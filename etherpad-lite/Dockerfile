@@ -1,7 +1,7 @@
 FROM node:9
 MAINTAINER Bjoern Ludwig <bjoern.ludwig@ptb.de>
 
-ENV ETHERPAD_VERSION 1.6.5
+ENV ETHERPAD_VERSION 1.6.6
 ENV NODE_ENV production
 
 RUN apt-get update && \
@@ -18,16 +18,16 @@ RUN curl -SL \
 
 WORKDIR etherpad-lite
 
-RUN bin/installDeps.sh && rm settings.json
-COPY entrypoint.sh /entrypoint.sh
+#RUN bin/installDeps.sh && rm settings.json
+#COPY entrypoint.sh /entrypoint.sh
 
-RUN sed -i 's/^node/exec\ node/' bin/run.sh
+#RUN sed -i 's/^node/exec\ node/' bin/run.sh
 
 # OpenShift runs containers as non-root
-RUN chmod g+rwX,o+rwX -R .
+#RUN chmod g+rwX,o+rwX -R .
 
-VOLUME /opt/etherpad-lite/var
-RUN ln -s var/settings.json settings.json
+#VOLUME /opt/etherpad-lite/var
+#RUN ln -s var/settings.json settings.json
 
 EXPOSE 9001
 ENTRYPOINT ["/entrypoint.sh"]
