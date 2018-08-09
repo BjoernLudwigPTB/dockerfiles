@@ -1,5 +1,6 @@
 FROM node:9
-MAINTAINER Bjoern Ludwig <bjoern.ludwig@ptb.de>
+
+LABEL maintainer="Bjoern Ludwig <bjoern.ludwig@ptb.de>"
 
 ENV ETHERPAD_VERSION 1.6.6
 ENV NODE_ENV production
