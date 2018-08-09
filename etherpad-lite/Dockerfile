@@ -21,16 +21,16 @@ WORKDIR etherpad-lite
 
 RUN npm install ep_list_pads
 
-#RUN bin/installDeps.sh && rm settings.json
-#COPY entrypoint.sh /entrypoint.sh
+RUN bin/installDeps.sh && rm settings.json
+COPY entrypoint.sh /entrypoint.sh
 
-#RUN sed -i 's/^node/exec\ node/' bin/run.sh
+RUN sed -i 's/^node/exec\ node/' bin/run.sh
 
 # OpenShift runs containers as non-root
-#RUN chmod g+rwX,o+rwX -R .
+RUN chmod g+rwX,o+rwX -R .
 
-#VOLUME /opt/etherpad-lite/var
-#RUN ln -s var/settings.json settings.json
+VOLUME /opt/etherpad-lite/var
+RUN ln -s var/settings.json settings.json
 
 EXPOSE 9001
 ENTRYPOINT ["/entrypoint.sh"]
