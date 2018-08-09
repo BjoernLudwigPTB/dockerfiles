@@ -19,6 +19,8 @@ RUN curl -SL \
 
 WORKDIR etherpad-lite
 
+RUN npm install ep_list_pads
+
 #RUN bin/installDeps.sh && rm settings.json
 #COPY entrypoint.sh /entrypoint.sh
 
