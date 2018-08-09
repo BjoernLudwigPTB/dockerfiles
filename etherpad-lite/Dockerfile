@@ -19,7 +19,15 @@ RUN curl -SL \
 
 WORKDIR etherpad-lite
 
-RUN npm install ep_list_pads
+RUN npm install ep_public_view && \
+    npm install ep_list_pads && \
+    npm install ep_activepads && \
+    npm install ep_adminpads && \
+    npm install ep_better_pdf_export && \
+    npm install ep_colors && \
+    npm install ep_fileupload && \
+    npm install ep_github && \
+    npm install ep_markdown
 
 RUN bin/installDeps.sh && rm settings.json
 COPY entrypoint.sh /entrypoint.sh
