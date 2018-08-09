@@ -19,6 +19,9 @@ RUN curl -SL \
 
 WORKDIR etherpad-lite
 
+RUN bin/installDeps.sh && rm settings.json
+COPY entrypoint.sh /entrypoint.sh
+
 RUN npm install ep_public_view && \
     npm install ep_list_pads && \
     npm install ep_activepads && \
@@ -28,9 +31,6 @@ RUN npm install ep_public_view && \
     npm install ep_fileupload && \
     npm install ep_github && \
     npm install ep_markdown
-
-RUN bin/installDeps.sh && rm settings.json
-COPY entrypoint.sh /entrypoint.sh
 
 RUN sed -i 's/^node/exec\ node/' bin/run.sh
 
