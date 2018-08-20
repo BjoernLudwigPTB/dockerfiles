@@ -29,8 +29,6 @@ RUN npm install ep_public_view && \
     npm install ep_adminpads && \
     npm install ep_better_pdf_export && \
     npm install ep_colors && \
-    npm install ep_fileupload && \
-    npm install ep_github && \
     npm install ep_markdown
 
 RUN sed -i 's/^node/exec\ node/' bin/run.sh
