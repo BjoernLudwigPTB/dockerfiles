@@ -22,10 +22,13 @@ WORKDIR etherpad-lite
 RUN bin/installDeps.sh && rm settings.json
 COPY entrypoint.sh /entrypoint.sh
 
-RUN npm install ep_public_view && \
+RUN npm install node-gyp -g && \
+    npm install bcrypt -g && \
+    npm install bcrypt -save && \
+    npm install ep_hash_auth && \
+    npm install ep_public_view && \
     npm install ep_activepads && \
     npm install ep_adminpads && \
-    npm install ep_hash_auth && \
     npm install ep_better_pdf_export && \
     npm install ep_colors && \
     npm install ep_headings2 && \
