@@ -24,27 +24,28 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN npm install node-gyp -g && \
     npm install bcrypt -g && \
-    npm install bcrypt -save && \
-    npm install ep_hash_auth && \
-    npm install ep_public_view && \
-    npm install ep_activepads && \
-    npm install ep_adminpads && \
-    npm install ep_better_pdf_export && \
-    npm install ep_colors && \
-    npm install ep_headings2 && \
-    npm install ep_align && \
-    npm install ep_small_list && \
-    npm install ep_horizontal_line && \
-    npm install ep_historicalsearch && \
-    npm install ep_markdownify && \
-    npm install ep_latex && \
-    npm install ep_latexexport && \
-    npm install ep_subscript && \
-    npm install ep_superscript && \
-    npm install ep_timesliderdiff && \
-    npm install ep_page_view && \
-    npm install ep_comments_page && \
-    npm install ep_markdown
+    npm install bcrypt --save && \
+    npm install ep_hash_auth -g && \
+    npm install ep_public_view -g && \
+    npm install ep_activepads -g && \
+    npm install ep_adminpads -g && \
+    npm install html-pdf -g && \
+    npm install ep_better_pdf_export -g && \
+    npm install ep_colors -g && \
+    npm install ep_headings2 -g && \
+    npm install ep_align -g && \
+    npm install ep_small_list -g && \
+    npm install ep_horizontal_line -g && \
+    npm install ep_historicalsearch -g && \
+    npm install ep_markdownify -g && \
+    npm install ep_latex -g && \
+    npm install ep_latexexport -g && \
+    npm install ep_subscript -g && \
+    npm install ep_superscript -g && \
+    npm install ep_timesliderdiff -g && \
+    npm install ep_page_view -g && \
+    npm install ep_comments_page -g && \
+    npm install ep_markdown -g
 
 RUN sed -i 's/^node/exec\ node/' bin/run.sh
 
