@@ -2,7 +2,7 @@ FROM node:9
 
 LABEL maintainer="Bjoern Ludwig <bjoern.ludwig@ptb.de>"
 
-ENV ETHERPAD_VERSION 1.6.6
+ENV ETHERPAD_VERSION 1.7.0
 ENV NODE_ENV production
 
 RUN apt-get update && \
