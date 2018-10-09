@@ -23,14 +23,13 @@ RUN bin/installDeps.sh && rm settings.json
 COPY entrypoint.sh /entrypoint.sh
 
 RUN npm install ep_public_view && \
-    npm install ep_list_pads && \
     npm install ep_activepads && \
     npm install ep_adminpads && \
+    npm install ep_hash_auth && \
     npm install ep_better_pdf_export && \
     npm install ep_colors && \
     npm install ep_headings && \
     npm install ep_align && \
-    npm install ep_autocomp && \
     npm install ep_small_list && \
     npm install ep_horizontal_line && \
     npm install ep_historicalsearch && \
