@@ -27,7 +27,6 @@ RUN npm install ep_public_view && \
     npm install bcrypt && \
     npm install ep_hash_auth && \
     npm install ep_autocomp && \
-    npm install ep_activepads && \
     npm install ep_adminpads && \
     npm install html-pdf && \
     npm install ep_better_pdf_export && \
