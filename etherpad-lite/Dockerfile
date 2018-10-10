@@ -41,7 +41,7 @@ RUN npm install ep_public_view && \
     npm install ep_subscript && \
     npm install ep_superscript && \
     npm install ep_timesliderdiff && \
-    #npm install ep_page_view && \
+    npm install ep_page_view && \
     npm install ep_comments_page && \
     npm install ep_markdown
 
