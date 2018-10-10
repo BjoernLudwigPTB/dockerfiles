@@ -24,8 +24,9 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN npm install ep_public_view && \
     #npm install node-gyp && \
-    #npm install bcrypt && \
-    #npm install ep_hash_auth && \
+    npm install bcrypt && \
+    npm install ep_hash_auth && \
+    npm install ep_autocomp && \
     npm install ep_activepads && \
     npm install ep_adminpads && \
     npm install html-pdf && \
@@ -37,8 +38,6 @@ RUN npm install ep_public_view && \
     npm install ep_horizontal_line && \
     npm install ep_historicalsearch && \
     npm install ep_markdownify && \
-    npm install ep_latex && \
-    npm install ep_latexexport && \
     npm install ep_subscript && \
     npm install ep_superscript && \
     npm install ep_timesliderdiff && \
