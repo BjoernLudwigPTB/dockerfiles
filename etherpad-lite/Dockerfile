@@ -22,29 +22,29 @@ WORKDIR etherpad-lite
 RUN bin/installDeps.sh && rm settings.json
 COPY entrypoint.sh /entrypoint.sh
 
-RUN npm install -g node-gyp && \
-    npm install -g bcrypt && \
-    npm install -g ep_hash_auth && \
-    npm install -g ep_public_view && \
-    npm install -g ep_activepads && \
-    npm install -g ep_adminpads && \
-    npm install -g html-pdf && \
-    npm install -g ep_better_pdf_export && \
-    npm install -g ep_colors && \
-    npm install -g ep_headings2 && \
-    npm install -g ep_align && \
-    npm install -g ep_small_list && \
-    npm install -g ep_horizontal_line && \
-    npm install -g ep_historicalsearch && \
-    npm install -g ep_markdownify && \
-    npm install -g ep_latex && \
-    npm install -g ep_latexexport && \
-    npm install -g ep_subscript && \
-    npm install -g ep_superscript && \
-    npm install -g ep_timesliderdiff && \
-    npm install -g ep_page_view && \
-    npm install -g ep_comments_page && \
-    npm install -g ep_markdown
+RUN npm install ep_public_view && \
+    #npm install node-gyp && \
+    #npm install bcrypt && \
+    #npm install ep_hash_auth && \
+    npm install ep_activepads && \
+    npm install ep_adminpads && \
+    npm install html-pdf && \
+    npm install ep_better_pdf_export && \
+    npm install ep_colors && \
+    npm install ep_headings2 && \
+    npm install ep_align && \
+    npm install ep_small_list && \
+    npm install ep_horizontal_line && \
+    npm install ep_historicalsearch && \
+    npm install ep_markdownify && \
+    npm install ep_latex && \
+    npm install ep_latexexport && \
+    npm install ep_subscript && \
+    npm install ep_superscript && \
+    npm install ep_timesliderdiff && \
+    npm install ep_page_view && \
+    npm install ep_comments_page && \
+    npm install ep_markdown
 
 RUN sed -i 's/^node/exec\ node/' bin/run.sh
 
