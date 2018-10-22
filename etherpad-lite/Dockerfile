@@ -31,18 +31,17 @@ RUN npm install ep_public_view && \
     npm install html-pdf && \
     npm install ep_better_pdf_export && \
     npm install ep_colors && \
-    npm install ep_headings2 && \
+    npm install ep_headings && \
     npm install ep_align && \
     npm install ep_small_list && \
-    npm install ep_horizontal_line && \
     npm install ep_historicalsearch && \
-    npm install ep_markdownify && \
+    npm install ep_markdown && \
     npm install ep_subscript && \
     npm install ep_superscript && \
     npm install ep_timesliderdiff && \
     npm install ep_page_view && \
     npm install ep_comments_page && \
-    npm install ep_markdown
+    npm install ep_copy_paste_images
 
 RUN sed -i 's/^node/exec\ node/' bin/run.sh
 
