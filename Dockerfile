@@ -2,7 +2,7 @@ FROM node:9
 
 LABEL maintainer="Bjoern Ludwig <bjoern.ludwig@ptb.de>"
 
-ENV ETHERPAD_VERSION 1.7.0
+ENV ETHERPAD_VERSION 1.7.5
 ENV NODE_ENV production
 
 RUN apt-get update && \
@@ -17,16 +17,15 @@ RUN curl -SL \
     > etherpad.zip && unzip etherpad && rm etherpad.zip && \
     mv etherpad-lite-${ETHERPAD_VERSION} etherpad-lite
 
-WORKDIR etherpad-lite
+WORKDIR /opt/etherpad-lite
 
 RUN bin/installDeps.sh && rm settings.json
+
 COPY entrypoint.sh /entrypoint.sh
 
-RUN npm install ep_public_view && \
-    #npm install node-gyp && \
-    npm install bcrypt && \
-    npm install ep_hash_auth && \
-    npm install ep_autocomp && \
+RUN chmod g+rwx,o+rwx /entrypoint.sh
+
+RUN npm install ep_autocomp && \
     npm install ep_adminpads && \
     npm install html-pdf && \
     npm install ep_better_pdf_export && \
@@ -39,7 +38,6 @@ RUN npm install ep_public_view && \
     npm install ep_subscript && \
     npm install ep_superscript && \
     npm install ep_timesliderdiff && \
-    npm install ep_page_view && \
     npm install ep_comments_page && \
     npm install ep_copy_paste_images
 

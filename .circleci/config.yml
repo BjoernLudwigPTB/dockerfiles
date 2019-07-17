@@ -1,0 +1,42 @@
+# Python CircleCI 2.1 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+#
+# This is mainly taken from
+# https://vsupalov.com/build-docker-image-with-circle-ci-2-push-to-google-container-registry/
+# and adapted to our needs. Thanks for the awesome preparation.
+version: 2.1
+workflows:
+  build_and_push:
+    jobs:
+      - build
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:9
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # This builds the image and uploads it to hub.docker.com. Taken from
+      # https://circleci.com/docs/2.0/building-docker-images/#overview
+      - setup_remote_docker
+
+      # Build image.
+      - run:
+          name: Build image
+          command: |
+            TAG=$CIRCLE_BRANCH
+            docker build -t bludoc/etherpad-lite:$TAG .
+
+      # Push image.
+      - run:
+          name: Push image
+          command: |
+            TAG=$CIRCLE_BRANCH
+            echo $DOCKER_PASS | docker login \
+              --username $DOCKER_USER --password-stdin
+            docker push bludoc/etherpad-lite:$TAG
