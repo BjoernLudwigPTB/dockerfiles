@@ -44,35 +44,35 @@ $ docker run -d \
 
 Etherpad will automatically create an `etherpad` database in the specified mysql
 server if it does not already exist.
-You can now access Etherpad Lite from http://localhost:9001/
+You can now access Etherpad Lite from [http://localhost:9001/](http://localhost:9001/)
 
 ## Environment variables
 
 This image supports the following environment variables:
 
-* `ETHERPAD_TITLE`: Title of the Etherpad Lite instance. Defaults to "Etherpad".
-* `ETHERPAD_PORT`: Port of the Etherpad Lite instance. Defaults to 9001.
+*   `ETHERPAD_TITLE`: Title of the Etherpad Lite instance. Defaults to "Etherpad".
+*   `ETHERPAD_PORT`: Port of the Etherpad Lite instance. Defaults to 9001.
 
-* `ETHERPAD_ADMIN_PASSWORD`: If set, an admin account is enabled for Etherpad,
+*   `ETHERPAD_ADMIN_PASSWORD`: If set, an admin account is enabled for Etherpad,
 and the /admin/ interface is accessible via it.
-* `ETHERPAD_ADMIN_USER`: If the admin password is set, this defaults to "admin".
+*   `ETHERPAD_ADMIN_USER`: If the admin password is set, this defaults to "admin".
 Otherwise the user can set it to another username.
 
-* `ETHERPAD_DB_TYPE`: Type of databse to use. Defaults to `mysql`.
-* `ETHERPAD_DB_HOST`: Hostname of the database to use. Defaults to `mysql`.
-* `ETHERPAD_DB_USER`: By default Etherpad Lite will attempt to connect as root
+*   `ETHERPAD_DB_TYPE`: Type of databse to use. Defaults to `mysql`.
+*   `ETHERPAD_DB_HOST`: Hostname of the database to use. Defaults to `mysql`.
+*   `ETHERPAD_DB_USER`: By default Etherpad Lite will attempt to connect as root
 to the database container.
-* `ETHERPAD_DB_PASSWORD`: Password to use, mandatory. If legacy links
+*   `ETHERPAD_DB_PASSWORD`: Password to use, mandatory. If legacy links
 are used and `ETHERPAD_DB_USER` is root, then `MYSQL_ENV_MYSQL_ROOT_PASSWORD` is
 automatically used.
-* `ETHERPAD_DB_PASSWORD_FILE`: MySQL password to use, replace `ETHERPAD_DB_PASSWORD`
+*   `ETHERPAD_DB_PASSWORD_FILE`: MySQL password to use, replace `ETHERPAD_DB_PASSWORD`
 when using [Docker secrets](https://docs.docker.com/engine/swarm/secrets/).
-* `ETHERPAD_DB_NAME`: The database to use. Defaults to *etherpad*. If the
+*   `ETHERPAD_DB_NAME`: The database to use. Defaults to *etherpad*. If the
 database is not available, it will be created when the container is launched
 (only if the database type is either `mysql` or `postgres`, and the user need to
 have the right to create the database).
-* `ETHERPAD_DB_CHARSET`: The charset to use. Defaults to *utf8mb4*.
-* `ETHERPAD_API_KEY`: if file `APIKEY.txt` is missing, the variable value is used to provision it
+*   `ETHERPAD_DB_CHARSET`: The charset to use. Defaults to *utf8mb4*.
+*   `ETHERPAD_API_KEY`: if file `APIKEY.txt` is missing, the variable value is used to provision it
 
 The generated settings.json file will be available as a volume under
 */opt/etherpad-lite/var/*.
