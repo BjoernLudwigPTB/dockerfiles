@@ -23,7 +23,7 @@ RUN bin/installDeps.sh && rm settings.json
 
 COPY entrypoint.sh /entrypoint.sh
 
-RUN chmod g+rwX,o+rwX /entrypoint.sh
+RUN chmod g+rwx,o+rwx /entrypoint.sh
 
 RUN npm install ep_public_view && \
     #npm install node-gyp && \
