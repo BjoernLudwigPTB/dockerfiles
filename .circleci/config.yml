@@ -19,8 +19,7 @@ jobs:
       # This section builds the image and uploads it to hub.docker.com and is
       # taken from
       # https://circleci.com/docs/2.0/building-docker-images/#overview
-      - setup_remote_docker:
-          docker_layer_caching: true
+      - setup_remote_docker
 
       # Build image.
       - run:
