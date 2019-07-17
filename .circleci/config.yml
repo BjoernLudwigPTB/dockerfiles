@@ -6,6 +6,11 @@
 # https://vsupalov.com/build-docker-image-with-circle-ci-2-push-to-google-container-registry/
 # and adapted to our needs. Thanks for the awesome preparation.
 version: 2.1
+workflows:
+  build_and_push:
+    jobs:
+      - build
+
 jobs:
   build:
     docker:
