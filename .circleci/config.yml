@@ -90,9 +90,9 @@ jobs:
 
       # Build and push image.
       - run:
-        name: Build and push image.
-        command: |
-          TAG=$CIRCLE_BRANCH
-          docker build -t bludoc/etherpad-lite:$TAG .
-          docker login -u $DOCKER_USER -p $DOCKER_PASS
-          docker push bludoc/etherpad-lite:$TAG
+          name: Build and push image.
+          command: |
+            TAG=$CIRCLE_BRANCH
+            docker build -t bludoc/etherpad-lite:$TAG .
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker push bludoc/etherpad-lite:$TAG
