@@ -26,7 +26,6 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod g+rwx,o+rwx /entrypoint.sh
 
 RUN npm install ep_public_view && \
-    #npm install node-gyp && \
     npm install bcrypt && \
     npm install ep_hash_auth && \
     npm install ep_autocomp && \
@@ -34,7 +33,7 @@ RUN npm install ep_public_view && \
     npm install html-pdf && \
     npm install ep_better_pdf_export && \
     npm install ep_colors && \
-    npm install ep_headings && \
+    npm install ep_headings_css && \
     npm install ep_align && \
     npm install ep_small_list && \
     npm install ep_historicalsearch && \
