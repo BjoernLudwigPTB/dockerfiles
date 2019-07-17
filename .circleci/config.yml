@@ -24,14 +24,15 @@ jobs:
 
       # Build image.
       - run:
-          name: Build image.
+          name: Build image
           command: |
             TAG=$CIRCLE_BRANCH
             docker build -t bludoc/etherpad-lite:$TAG .
-            docker login -u $DOCKER_USER -p $DOCKER_PASS
 
       # Push image.
       - run:
-          name: Push image.
+          name: Push image
           command: |
+            TAG=$CIRCLE_BRANCH
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker push bludoc/etherpad-lite:$TAG
