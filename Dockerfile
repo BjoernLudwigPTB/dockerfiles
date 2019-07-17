@@ -30,6 +30,7 @@ RUN npm install ep_autocomp && \
     npm install html-pdf && \
     npm install ep_better_pdf_export && \
     npm install ep_colors && \
+    npm install ep_headings2 && \
     npm install ep_align && \
     npm install ep_small_list && \
     npm install ep_historicalsearch && \
