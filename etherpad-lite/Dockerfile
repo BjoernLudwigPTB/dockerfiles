@@ -2,7 +2,7 @@ FROM node:9
 
 LABEL maintainer="Bjoern Ludwig <bjoern.ludwig@ptb.de>"
 
-ENV ETHERPAD_VERSION 1.7.0
+ENV ETHERPAD_VERSION 1.7.5
 ENV NODE_ENV production
 
 RUN apt-get update && \
@@ -17,7 +17,7 @@ RUN curl -SL \
     > etherpad.zip && unzip etherpad && rm etherpad.zip && \
     mv etherpad-lite-${ETHERPAD_VERSION} etherpad-lite
 
-WORKDIR etherpad-lite
+WORKDIR /opt/etherpad-lite
 
 RUN bin/installDeps.sh && rm settings.json
 COPY entrypoint.sh /entrypoint.sh
