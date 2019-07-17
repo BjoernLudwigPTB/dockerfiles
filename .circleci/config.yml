@@ -7,7 +7,7 @@
 # and adapted to our needs. Thanks for the awesome preparation.
 version: 2.1
 jobs:
-  test-locally:
+  build:
     docker:
       - image: circleci/node:9
 
