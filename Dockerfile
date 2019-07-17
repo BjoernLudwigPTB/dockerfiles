@@ -27,7 +27,6 @@ RUN chmod g+rwx,o+rwx /entrypoint.sh
 
 RUN npm install ep_autocomp && \
     npm install ep_adminpads && \
-    npm install html-pdf && \
     npm install ep_better_pdf_export && \
     npm install ep_colors && \
     npm install ep_headings2 && \
