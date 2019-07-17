@@ -65,7 +65,7 @@ jobs:
 
   push-image:
     docker:
-    - image: circleci/node:9
+      - image: circleci/node:9
 
     working_directory: ~/repo
 
