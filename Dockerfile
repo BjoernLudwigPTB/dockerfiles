@@ -7,7 +7,7 @@ ENV NODE_ENV production
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    curl unzip mysql-client node-pg postgresql-client abiword && \
+    curl unzip mysql-client node-pg postgresql-client && \
     rm -r /var/lib/apt/lists/*
 
 WORKDIR /opt/
