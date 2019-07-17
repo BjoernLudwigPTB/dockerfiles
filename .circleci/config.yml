@@ -21,8 +21,7 @@ jobs:
     steps:
       - checkout
 
-      # This section builds the image and uploads it to hub.docker.com and is
-      # taken from
+      # This builds the image and uploads it to hub.docker.com. Taken from
       # https://circleci.com/docs/2.0/building-docker-images/#overview
       - setup_remote_docker
 
