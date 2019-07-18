@@ -27,19 +27,16 @@ RUN chmod g+rwx,o+rwx /entrypoint.sh
 
 RUN npm install ep_autocomp && \
     npm install ep_adminpads && \
-    npm install html-pdf && \
-    npm install ep_better_pdf_export && \
+    npm install ep_export_cp_html_image && \
     npm install ep_colors && \
     npm install ep_headings && \
     npm install ep_align && \
-    npm install ep_small_list && \
-    npm install ep_historicalsearch && \
-    npm install ep_markdown && \
     npm install ep_subscript && \
     npm install ep_superscript && \
     npm install ep_timesliderdiff && \
     npm install ep_comments_page && \
-    npm install ep_copy_paste_images
+    npm install ep_copy_paste_images && \
+    npm install ep_tasklist
 
 RUN sed -i 's/^node/exec\ node/' bin/run.sh
 
