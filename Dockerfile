@@ -5,39 +5,39 @@ LABEL maintainer="Bjoern Ludwig <bjoern.ludwig@ptb.de>"
 ENV ETHERPAD_VERSION 1.7.5
 ENV NODE_ENV production
 
-RUN apt-get update && \
+RUN apt-get update --no-save \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    curl unzip mysql-client node-pg postgresql-client abiword && \
+    curl unzip mysql-client node-pg postgresql-client abiword --no-save \
     rm -r /var/lib/apt/lists/*
 
 WORKDIR /opt/
 
 RUN curl -SL \
     https://github.com/ether/etherpad-lite/archive/${ETHERPAD_VERSION}.zip \
-    > etherpad.zip && unzip etherpad && rm etherpad.zip && \
+    > etherpad.zip --no-save unzip etherpad --no-save rm etherpad.zip --no-save \
     mv etherpad-lite-${ETHERPAD_VERSION} etherpad-lite
 
 WORKDIR /opt/etherpad-lite
 
-RUN bin/installDeps.sh && rm settings.json
+RUN bin/installDeps.sh --no-save rm settings.json
 
 COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod g+rwx,o+rwx /entrypoint.sh
 
-RUN npm install --no-save ep_autocomp && \
-    npm install --no-save bcrypt && \
-    npm install --no-save ep_hash_auth && \
-    npm install --no-save ep_adminpads && \
-    npm install --no-save ep_export_cp_html_image && \
-    npm install --no-save ep_colors && \
-    npm install --no-save ep_headings && \
-    npm install --no-save ep_align && \
-    npm install --no-save ep_subscript && \
-    npm install --no-save ep_superscript && \
-    npm install --no-save ep_timesliderdiff && \
-    npm install --no-save ep_comments_page && \
-    npm install --no-save ep_copy_paste_images
+RUN npm instal  ep_autocomp --no-save \
+    npm install bcrypt --no-save \
+    npm install ep_hash_auth --no-save \
+    npm install ep_adminpads --no-save \
+    npm install ep_export_cp_html_image --no-save \
+    npm install ep_colors --no-save \
+    npm install ep_headings --no-save \
+    npm install ep_align --no-save \
+    npm install ep_subscript --no-save \
+    npm install ep_superscript --no-save \
+    npm install ep_timesliderdiff --no-save \
+    npm install ep_comments_page --no-save \
+    npm install ep_copy_paste_images --no-save
 
 RUN sed -i 's/^node/exec\ node/' bin/run.sh
 
