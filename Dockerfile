@@ -31,13 +31,11 @@ RUN npm install ep_autocomp && \
     npm install ep_colors && \
     npm install ep_headings2 && \
     npm install ep_align && \
-    npm install ep_historicalsearch && \
     npm install ep_subscript && \
     npm install ep_superscript && \
     npm install ep_timesliderdiff && \
     npm install ep_comments_page && \
     npm install ep_copy_paste_images && \
-    npm install ep_set_title_on_pad && \
     npm install ep_tasklist
 
 RUN sed -i 's/^node/exec\ node/' bin/run.sh
