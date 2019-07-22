@@ -25,7 +25,7 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod g+rwx,o+rwx /entrypoint.sh
 
-RUN npm instal  ep_autocomp --no-save && \
+RUN npm install  ep_autocomp --no-save && \
     npm install bcrypt --no-save && \
     npm install ep_hash_auth --no-save && \
     npm install ep_adminpads --no-save && \
