@@ -33,6 +33,14 @@ jobs:
             TAG=$CIRCLE_BRANCH
             docker build -t bludoc/etherpad-lite:$TAG .
 
+      # Test image.
+      - run:
+          name: Test images
+          command: |
+            TAG=$CIRCLE_BRANCH
+            docker run -d bludoc/etherpad-lite:$TAG
+            docker ps | grep $TAG
+
       # Push image.
       - run:
           name: Push image
