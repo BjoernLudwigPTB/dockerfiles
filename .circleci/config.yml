@@ -11,7 +11,6 @@ executors:
   docker-publisher:
     environment:
       IMAGE_NAME: etherpad-lite
-      TAG: $CIRCLE_BRANCH
     docker:
       - image: circleci/buildpack-deps:disco
 
@@ -40,12 +39,12 @@ jobs:
       - run:
           name: Build image
           command: |
-            docker build -t $DOCKER_USER/$IMAGE_NAME:$TAG .
+            docker build -t $DOCKER_USER/$IMAGE_NAME:$CIRCLE_BRANCH .
 
       # Save the image.
       - run:
           name: Save Docker image
-          command: docker save -o image.tar $DOCKER_USER/$IMAGE_NAME:$TAG
+          command: docker save -o image.tar $DOCKER_USER/$IMAGE_NAME:$CIRCLE_BRANCH
 
       # Permanently store the built image to test and potentially deploy it.
       - persist_to_workspace:
@@ -73,8 +72,8 @@ jobs:
       - run:
           name: Test images
           command: |
-            docker run -d $DOCKER_USER/$IMAGE_NAME:$TAG
-            docker ps | grep $TAG
+            docker run -d $DOCKER_USER/$IMAGE_NAME:$CIRCLE_BRANCH
+            docker ps | grep $CIRCLE_BRANCH
 
       # Push image.
       - run:
@@ -83,4 +82,4 @@ jobs:
             echo $DOCKER_PASS | docker login \
               --username $DOCKER_USER --password-stdin
 
-            docker push $DOCKER_USER/$IMAGE_NAME:$TAG
+            docker push $DOCKER_USER/$IMAGE_NAME:$CIRCLE_BRANCH
