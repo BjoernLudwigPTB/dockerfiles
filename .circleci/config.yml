@@ -4,7 +4,9 @@
 #
 # This is mainly taken from
 # https://vsupalov.com/build-docker-image-with-circle-ci-2-push-to-google-container-registry/
-# and adapted to our needs. Thanks for the awesome preparation.
+# and adapted to our needs, especially with enhancements from
+# https://circleci.com/blog/using-circleci-workflows-to-replicate-docker-hub-automated-builds/
+# Thanks for the awesome preparation.
 version: 2.1
 
 executors:
