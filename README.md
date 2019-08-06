@@ -1,8 +1,13 @@
 # Etherpad Lite image for docker
+[![CircleCI](https://circleci.com/gh/BjoernLudwigPTB/dockerfiles/tree/latest.svg?style=shield)](https://circleci.com/gh/BjoernLudwigPTB/dockerfiles/tree/latest)
+[![Get your own image badge on microbadger.com](https://images.microbadger.com/badges/image/bludoc/etherpad-lite:latest.svg)](https://microbadger.com/images/bludoc/etherpad-lite:latest)
+[![Get your own version badge on microbadger.com](https://images.microbadger.com/badges/version/bludoc/etherpad-lite:latest.svg)](https://microbadger.com/images/bludoc/etherpad-lite:latest)
 
-This is a docker image for [Etherpad Lite](http://etherpad.org/) collaborative
-text editor. The Dockerfile for this image has been inspired by the
-[official Wordpress](https://registry.hub.docker.com/_/wordpress/) Dockerfile and
+This is a docker image for [Etherpad Lite](http://etherpad.org/)
+collaborative text editor. The Dockerfile for this image has been
+inspired by the
+[official Wordpress](https://registry.hub.docker.com/_/wordpress/)
+Dockerfile and
 [johbo's etherpad-lite](https://registry.hub.docker.com/u/johbo/etherpad-lite/)
 image.
 
