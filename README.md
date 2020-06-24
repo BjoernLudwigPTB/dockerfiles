@@ -1,9 +1,11 @@
 # UNMAINTAINED
 
-**This repository is not being maintained anymore.** Fortunately, there are now many etherpad docker images you can choose from, including the [official one by the etherpad team](https://hub.docker.com/r/etherpad/etherpad).
+**This repository is not being maintained anymore.** Fortunately, there are now many
+etherpad docker images you can choose from, including the [official one by the
+ etherpad team](https://hub.docker.com/r/etherpad/etherpad).
 
-# Etherpad Lite image for docker
-[![CircleCI](https://circleci.com/gh/BjoernLudwigPTB/dockerfiles/tree/latest.svg?style=shield)](https://circleci.com/gh/BjoernLudwigPTB/dockerfiles/tree/latest)
+## Etherpad Lite image for docker
+
 [![Get your own version badge on microbadger.com](https://images.microbadger.com/badges/version/bludoc/etherpad-lite:latest.svg)](https://microbadger.com/images/bludoc/etherpad-lite:latest)
 [![Get your own image badge on microbadger.com](https://images.microbadger.com/badges/image/bludoc/etherpad-lite:latest.svg)](https://microbadger.com/images/bludoc/etherpad-lite:latest)
 
